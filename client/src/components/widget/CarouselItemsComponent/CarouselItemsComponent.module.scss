@@ -1,0 +1,45 @@
+@import '../../../styles/global-constants.scss';
+
+.carouselItemsComponent {
+    margin-bottom: $size-bmb;
+    
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: $size-mb-ib;
+
+        .title {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+
+            h3 {
+                font-size: 30px;
+            }
+
+            a {
+                color: $color-green-2;
+                margin-bottom: 4px;
+                text-decoration: none;
+            }
+        }
+
+        .buttonContainer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .button {
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
