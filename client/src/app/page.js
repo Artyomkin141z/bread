@@ -102,8 +102,8 @@ export default async function Home() {
       />
       <CarouselItemsComponent 
         items={newItems}
-        title='Новинки'
-        linkText='Все новинки'
+        title='Новости'
+        linkText='Все новости'
       />
       <MapComponent />
     </div>
