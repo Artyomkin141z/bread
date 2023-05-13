@@ -2,7 +2,7 @@
 
 .carouselItemsComponent {
     margin-bottom: $size-bmb;
-    
+
     header {
         display: flex;
         align-items: center;
@@ -40,6 +40,24 @@
                     height: 30px;
                 }
             }
+        }
+    }
+
+    .slide{
+        // padding: 20px 10px;
+        // border: 1px solid $color-border;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        img{
+            border-radius: 10px;  
+        }
+        .title{
+            color: $color;
+            text-decoration: none;
+            text-decoration: none;
+            font-size: 1.2rem;
         }
     }
 }

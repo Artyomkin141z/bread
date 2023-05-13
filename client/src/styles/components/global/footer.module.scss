@@ -1,0 +1,89 @@
+@import "../../global-constants.scss";
+
+$gap-column: 20px;
+$gap-row: 40px;
+$gap-inside: 15px;
+
+.footer {
+    padding: $gap-row 0;
+    border-top: 1px solid $color-border;
+
+    footer {
+        width: $size-content-width;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: $gap-row;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            gap: $gap-row;
+
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h3 {
+                    font-weight: 600;
+                }
+
+                li * {
+                    color: $color-3;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .feedback {
+            display: flex;
+            flex-direction: column;
+            gap: $gap-column;
+
+            .social {
+                display: flex;
+                flex-direction: column;
+                gap: $gap-inside;
+
+                .images {
+                    display: flex;
+                    gap: 10px;
+
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+
+            .button {
+                background-color: $color-2;
+                padding: 10px 20px;
+                border-radius: 10px;
+            }
+        }
+
+        .imgLinks {
+            display: flex;
+            gap: 10px;
+
+            img {
+                height: 70px;
+            }
+        }
+
+        .cop {
+            padding: $gap-row 0 0;
+            border-top: 1px solid $color-border;
+
+            p {
+                color: $color-3;
+                font-size: 0.7rem;
+                line-height: 1rem;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
