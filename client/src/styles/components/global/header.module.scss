@@ -19,6 +19,10 @@
         }
     }
 
+    .bigMargin{
+        margin-bottom: 190px;
+    }
+
     header {
         display: flex;
         justify-content: space-between;
@@ -34,7 +38,7 @@
             .img {
                 height: 150px;
                 width: auto;
-                transition: 0.4s;
+                // transition: 0.4s;
             }
 
             .logoName {

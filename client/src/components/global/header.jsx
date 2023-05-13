@@ -12,6 +12,7 @@ export default function Header() {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
+        setScrollPosition(window.pageYOffset);
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -27,7 +28,7 @@ export default function Header() {
 
     return (
         <div className={styles.header}>
-            <div className={styles.top}>
+            <div className={(scrollPosition > 40) ? `${styles.bigMargin} ${styles.top}` : styles.top}>
                 <h4>Новополоцкий хлебозавод, Филиал <Link href='http://vhp.by/'>{'ОАО "Витебскхлебпром"'}</Link> </h4>
                 <div>
                     <h4>Контакты</h4>
@@ -35,7 +36,7 @@ export default function Header() {
                     <h4>Вакансии</h4>
                 </div>
             </div>
-            <div className={(scrollPosition > 40 || router.pathname === '/') ? styles.scrolled : ''}>
+            <div className={(scrollPosition > 40) ? styles.scrolled : ''}>
                 <header>
                     <Link href='/' className={styles.logo}>
                         <Image className={styles.img} src={logo} alt='Полоцкий хлебозавод' />
@@ -43,7 +44,7 @@ export default function Header() {
                     </Link>
                     <nav>
                         <Link href='/' >О нас</Link>
-                        <Link href='/' >Продукция</Link>
+                        <Link href='/categories' >Продукция</Link>
                         <Link href='/' >Новости</Link>
                     </nav>
                 </header>

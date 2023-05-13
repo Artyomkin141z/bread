@@ -1,6 +1,7 @@
 import Header from '@/components/global/header'
 import '../styles/global.scss'
 import Footer from '@/components/global/footer'
+import { usePathname } from 'next/navigation';
 
 export const metadata = {
   title: 'Новоплоцкий хлебзавод',
@@ -8,6 +9,8 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  // const pathname = usePathname();
+
   return (
     <html lang="en">
       <body>
