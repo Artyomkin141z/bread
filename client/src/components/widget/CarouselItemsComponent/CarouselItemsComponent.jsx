@@ -25,12 +25,14 @@ export default function CarouselItemsComponent({ items, title, linkText }) {
     }, [])
 
     const swiperSlides = items.map((item, i) => {
-        return <SwiperSlide key={i}>
-            <img
-                src={item.img}
-                alt={item.title}
-            />
+        return <SwiperSlide key={i} className={styles.slide}>
             <Link href={item.id}>
+                <img
+                    src={item.img}
+                    alt={item.title}
+                />
+            </Link>
+            <Link href={item.id} className={styles.title}>
                 {item.title}
             </Link>
         </SwiperSlide>
@@ -50,7 +52,7 @@ export default function CarouselItemsComponent({ items, title, linkText }) {
                     >
                         <FiChevronLeft />
                     </div>
-                    <div 
+                    <div
                         className={styles.button}
                         onClick={handleNextClick}
                     >
@@ -61,8 +63,8 @@ export default function CarouselItemsComponent({ items, title, linkText }) {
             <Swiper
                 ref={swiperRef}
                 modules={[Navigation, Pagination]}
-                spaceBetween={50}
-                slidesPerView={3}
+                spaceBetween={20}
+                slidesPerView={4}
                 navigation
                 pagination={{ clickable: true }}
             >
