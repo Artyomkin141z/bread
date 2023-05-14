@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "materialies",
+  "info": {
+    "singularName": "materialy",
+    "pluralName": "materialies",
+    "displayName": "Материалы"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tiltle": {
+      "type": "string",
+      "required": true,
+      "maxLength": 150
+    }
+  }
+}

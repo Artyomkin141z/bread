@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * slider controller
+ * materialy controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::slider.slider');
+module.exports = createCoreController('api::materialy.materialy');
