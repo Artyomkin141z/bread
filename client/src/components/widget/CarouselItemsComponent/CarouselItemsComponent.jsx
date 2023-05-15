@@ -61,6 +61,7 @@ export default function CarouselItemsComponent({ items, title, linkText }) {
                 </div>
             </header>
             <Swiper
+                className={styles.swiper}
                 ref={swiperRef}
                 modules={[Navigation, Pagination]}
                 spaceBetween={20}
