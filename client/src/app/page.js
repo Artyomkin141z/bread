@@ -3,6 +3,8 @@ import MapComponent from '@/components/widget/MapComponent/MapComponent';
 import SliderComponent from '@/components/widget/SliderComponent/SliderComponent'
 import Image from 'next/image'
 
+import testImg from '../../public/image/test_bread.png'
+
 async function getSlides() {
   const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/sliders?populate=*`);
 
@@ -41,22 +43,22 @@ const sliders = {
 const newItems = [
   {
     id: '1',
-    img: 'http://polhlebz.by/d/170351/d/b1400316502_6.jpg',
+    img: 'https://www.erase.bg/80e43fee-65e2-4c52-8cd8-dee904322c57',
     title: 'Название продукта',
   },
   {
     id: '2',
-    img: 'http://polhlebz.by/d/170351/d/b1400316502_6.jpg',
+    img: 'https://www.erase.bg/80e43fee-65e2-4c52-8cd8-dee904322c57',
     title: 'Название продукта',
   },
   {
     id: '3',
-    img: 'http://polhlebz.by/d/170351/d/b1400316502_6.jpg',
+    img: 'https://www.erase.bg/80e43fee-65e2-4c52-8cd8-dee904322c57',
     title: 'Название продукта',
   },
   {
     id: '4',
-    img: 'http://polhlebz.by/d/170351/d/b1400316502_6.jpg',
+    img: 'https://www.erase.bg/80e43fee-65e2-4c52-8cd8-dee904322c57',
     title: 'Название продукта',
   },
   {
