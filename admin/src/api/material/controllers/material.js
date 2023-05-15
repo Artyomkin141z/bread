@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * materialy controller
+ * material controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::materialy.materialy');
+module.exports = createCoreController('api::material.material');

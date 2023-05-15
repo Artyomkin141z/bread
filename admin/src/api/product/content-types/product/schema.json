@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Продукция",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100,
+      "minLength": 3,
+      "unique": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.kategorii"
+    },
+    "characteristic": {
+      "type": "component",
+      "repeatable": false,
+      "component": "products.harakteristika"
+    },
+    "energy": {
+      "type": "component",
+      "repeatable": false,
+      "component": "products.energeticheskaya-czennost"
+    },
+    "package": {
+      "type": "component",
+      "repeatable": true,
+      "component": "products.upakovka"
+    },
+    "natritional_value": {
+      "type": "component",
+      "repeatable": false,
+      "component": "products.pishhevaya-czennost"
+    }
+  }
+}

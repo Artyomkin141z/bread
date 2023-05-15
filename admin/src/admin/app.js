@@ -1,14 +1,14 @@
 const config = {
     locales: [
-        'ru',
+      'ru',
     ],
-};
-
-const bootstrap = (app) => {
+  };
+  
+  const bootstrap = (app) => {
     console.log(app);
-};
-
-export default {
+  };
+  
+  export default {
     config,
     bootstrap,
-};
+  };

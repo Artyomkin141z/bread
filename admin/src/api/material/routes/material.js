@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * materialy router
+ * material router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::materialy.materialy');
+module.exports = createCoreRouter('api::material.material');

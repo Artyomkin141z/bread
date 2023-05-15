@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_products_harakteristika",
+  "info": {
+    "displayName": "Характеристика"
+  },
+  "options": {},
+  "attributes": {
+    "composition": {
+      "type": "text",
+      "maxLength": 500
+    },
+    "expiration_date": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

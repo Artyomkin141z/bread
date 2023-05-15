@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_products_energeticheskaya_czennost",
+  "info": {
+    "displayName": "Энергетическая ценность"
+  },
+  "options": {},
+  "attributes": {
+    "calories": {
+      "type": "integer",
+      "min": 0,
+      "max": 1000
+    },
+    "energy": {
+      "type": "integer",
+      "min": 0,
+      "max": 10000
+    }
+  }
+}

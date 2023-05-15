@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_products_pishhevaya_czennost",
+  "info": {
+    "displayName": "Пищевая ценность"
+  },
+  "options": {},
+  "attributes": {
+    "proteins": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "fats": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    },
+    "carbohydrates": {
+      "type": "integer",
+      "min": 0,
+      "max": 100
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_products_upakovka",
+  "info": {
+    "displayName": "Упаковка"
+  },
+  "options": {},
+  "attributes": {
+    "package": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "mass": {
+      "type": "integer",
+      "min": 0,
+      "max": 10000
+    }
+  }
+}
