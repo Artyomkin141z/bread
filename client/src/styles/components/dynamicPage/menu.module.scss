@@ -1,0 +1,41 @@
+@import '../../global-constants.scss';
+
+.nav {
+    * {
+        list-style: none;
+        text-decoration: none;
+    }
+
+    ul,
+    li {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    li {
+        ul {
+            display: none;
+        }
+    }
+
+    a {
+        // margin: 0 -10px;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    li {
+        &.active {
+            &>a {
+                background-color: $color-2;
+
+            }
+
+            ul {
+                display: flex;
+                margin-left: 10px;
+            }
+        }
+    }
+}

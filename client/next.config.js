@@ -14,8 +14,11 @@ const nextConfig = {
         styledComponents: true
     },
     experimental: {
-        // Enables the styled-components SWC transform
-        styledComponents: true
+        // serverActions: true,
+        styledComponents: true,
+    },
+    experiments: {
+        // topLevelAwait: true
     }
 }
 

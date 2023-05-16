@@ -107,7 +107,7 @@ export default async function Home() {
         title='Новости'
         linkText='Все новости'
       />
-      <MapComponent />
+      {/* <MapComponent /> */}
     </div>
   )
 }

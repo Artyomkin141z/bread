@@ -32,7 +32,6 @@ export default function Header() {
                 <h4>Новополоцкий хлебозавод, Филиал <Link href='http://vhp.by/'>{'ОАО "Витебскхлебпром"'}</Link> </h4>
                 <div>
                     <h4>Контакты</h4>
-                    <h4>Награды</h4>
                     <h4>Вакансии</h4>
                 </div>
             </div>
@@ -43,9 +42,9 @@ export default function Header() {
                         <h1 className={styles.logoName}>Новополоцкий хлебозавод</h1>
                     </Link>
                     <nav>
-                        <Link href='/' >О нас</Link>
-                        <Link href='/categories' >Продукция</Link>
-                        <Link href='/' >Новости</Link>
+                        <Link href='/aboutus' >О нас</Link>
+                        <Link href='/products' >Продукция</Link>
+                        <Link href='/news' >Новости</Link>
                     </nav>
                 </header>
             </div>

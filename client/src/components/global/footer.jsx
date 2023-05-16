@@ -6,28 +6,50 @@ import telegram from '../../../public/image/global/telegram.svg'
 import instagram from '../../../public/image/global/instagram.svg'
 
 import Link from 'next/link'
+import { getMenu } from '@/utils/data.server.request'
 
-export default function Footer() {
+export default async function Footer(data) {
+    const menu = await getMenu();
+
+    const renderMenu = (items) => {
+        let products;
+        return (
+            <>
+                <ul>
+                    <h3><Link href='/'>Компания</Link></h3>
+                    {items.map(item => {
+                        if (item.path !== '/products') {
+                            return (
+                                <li key={item.id}>
+                                    <Link href={item.path}>{item.title}</Link>
+                                </li>
+                            )
+                        }
+                        else {
+                            products = item;
+                        }
+                    })}
+                </ul>
+                <ul>
+                    <h3><Link href={products.path}>{products.title}</Link></h3>
+                    {products.items.map(item => {
+                        return (
+                            <li key={item.id}>
+                                <Link href={item.path}>{item.title}</Link>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </>
+        )
+
+    }
+
     return (
         <div className={styles.footer}>
             <footer>
                 <nav>
-                    <ul>
-                        <h3>Компания</h3>
-                        <li><Link href='#'>О нас</Link></li>
-                        <li><Link href='#'>Контакты</Link></li>
-                        <li><Link href='#'>Новости</Link></li>
-                        <li><Link href='#'>Вакансии</Link></li>
-                        <li><Link href='#'>Награды</Link></li>
-                    </ul>
-                    <ul>
-                        <h3>Продукция</h3>
-                        <li><Link href='#'>Хлеба</Link></li>
-                        <li><Link href='#'>Булочная и сдобная продукция</Link></li>
-                        <li><Link href='#'>Печенье</Link></li>
-                        <li><Link href='#'>Пирожные и слоёные изделия</Link></li>
-                        <li><Link href='#'>Сладости мучные</Link></li>
-                    </ul>
+                    {renderMenu(menu)}
                     <ul>
                         <h3>Официальные ссылки</h3>
                         <li><Link href='#'>Президент Республики Беларусь</Link></li>
@@ -59,8 +81,8 @@ export default function Footer() {
                         220019, г. Минск, а/я 19. Онлайн-гипермаркет edostavka.by. Режим работы: круглосуточно. Дата регистрации в Торговом реестре: 24.10.2014 г.
                         Адрес электронной почты: info@e-dostavka.by
                     </p>
-                    <p>Способы оплаты товара и доставки: 1) наличными денежными средствами экспедитору; 2) банковской пластиковой карточкой экспедитору; 3) 
-                        банковской пластиковой карточкой в режиме «онлайн»; 4) безналичный расчет по счету. Способы доставки товара: 1) транспортным средством продавца; 2) 
+                    <p>Способы оплаты товара и доставки: 1) наличными денежными средствами экспедитору; 2) банковской пластиковой карточкой экспедитору; 3)
+                        банковской пластиковой карточкой в режиме «онлайн»; 4) безналичный расчет по счету. Способы доставки товара: 1) транспортным средством продавца; 2)
                         из пункта выдачи заказов.</p>
                 </div>
             </footer>
