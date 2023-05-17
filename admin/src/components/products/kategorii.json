@@ -8,7 +8,7 @@
   "attributes": {
     "kategory": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::category.category"
     }
   }

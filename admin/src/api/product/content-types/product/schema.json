@@ -30,11 +30,6 @@
         "audios"
       ]
     },
-    "categories": {
-      "type": "component",
-      "repeatable": true,
-      "component": "products.kategorii"
-    },
     "characteristic": {
       "type": "component",
       "repeatable": false,
@@ -54,6 +49,12 @@
       "type": "component",
       "repeatable": false,
       "component": "products.pishhevaya-czennost"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "product"
     }
   }
 }
