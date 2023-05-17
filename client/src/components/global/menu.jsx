@@ -1,17 +1,16 @@
 'use client'
 import styles from '../../styles/components/dynamicPage/menu.module.scss'
 
-import { getMenu, getMenuItem } from '@/utils/data.client.request';
+import { getMenu } from '@/utils/data.client.request';
 import Link from 'next/link';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 export default function MenuComponent() {
     const pathname = usePathname();
     const { menu, getMenuIsLoading, getMenuIsError } = getMenu();
 
-    console.log(menu)
-
+    // console.log(menu)
 
     const renderMenu = (items) => {
         return (

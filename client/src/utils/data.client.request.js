@@ -15,12 +15,12 @@ export function getMenu() {
 }
 
 export function getMenuItem(url) {
-    const { data, error, isLoading } = useSWR(`${host}/api/navigation/render/1?path=${url}&type=TREE`, fetcher);
+    const { data, error, isLoading } = useSWR(`${host}/api/navigation/render/1?path=${url}`, fetcher);
     // console.log(data)
 
     return {
         menuItem: data,
-        getMenuItemIsLoading: isLoading,
+        getMenuItemIsLoading: isLoading, 
         getMenuItemIsError: error,
     };
 }
