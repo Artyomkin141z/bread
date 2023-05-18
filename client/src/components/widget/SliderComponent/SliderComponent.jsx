@@ -1,21 +1,26 @@
 "use client"
+import './SliderComponent.scss'
 // import Swiper core and required modules
 import { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import './SliderComponent.scss'
+import Image from 'next/image';
 
-export default function SliderComponent({ sliders }) {
-    const swiperSlides = sliders.map((slide, i) => {
-        return <SwiperSlide key={i}>
+export default function SliderComponent({ slider, adminHost }) {
+    console.log(slider);
+
+    const swiperSlides = slider.slides.map((slide, i) => {
+        return <SwiperSlide key={slide.id}>
             {() => {
                 if (slide.url) {
 
                 }
                 else {
                     return <img
-                        src={slide.img}
-                        alt=''
+                        src={`${adminHost}${slide.image.data.attributes.url}`}
+                        alt={slide.title}
+                        width={slide.image.data.attributes.width}
+                        height={slide.image.data.attributes.height}
                     />
                 }
             }}

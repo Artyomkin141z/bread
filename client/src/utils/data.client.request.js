@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 
-const host = 'http://127.0.0.1:1337'
+export const host = 'http://127.0.0.1:1337'
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -15,7 +15,18 @@ export function getMenu() {
 }
 
 export function getMenuItem(url) {
-    const { data, error, isLoading } = useSWR(`${host}/api/navigation/render/1?path=${url}`, fetcher);
+    const { data, error, isLoading } = useSWR(`${host}/api/navigation/render/1?path=${url}&populate=*`, fetcher);
+    // console.log(data)
+
+    return {
+        menuItem: data,
+        getMenuItemIsLoading: isLoading, 
+        getMenuItemIsError: error,
+    };
+}
+
+export function getMenuProductItem(url){
+    const { data, error, isLoading } = useSWR(`${host}/api/navigation/render/1?path=${url}&populate[0]=products&populate[1]=products.image`, fetcher);
     // console.log(data)
 
     return {

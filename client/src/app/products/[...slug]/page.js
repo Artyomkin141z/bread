@@ -1,7 +1,5 @@
 'use client'
-import styles from '../../styles/pages/categories.module.scss'
-
-import MenuComponent from '@/components/global/menu';
+import styles from '../../../styles/pages/categories.module.scss'
 
 import Link from "next/link";
 import { usePathname } from 'next/navigation'
@@ -20,6 +18,7 @@ export default function Categories() {
             </div>
         )
     }
+    getMenuProductItem
 
     console.log(menuItem);
 

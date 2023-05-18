@@ -17,9 +17,9 @@
       "required": true,
       "unique": true
     },
-    "product": {
+    "products": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::product.product",
       "inversedBy": "categories"
     }

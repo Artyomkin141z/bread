@@ -2,6 +2,9 @@
 
 .nav {
     grid-area: NAV;
+    position: sticky;
+    top: 100px;
+    margin-bottom: 15px;
 
     * {
         list-style: none;

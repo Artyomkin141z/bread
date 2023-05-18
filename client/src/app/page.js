@@ -4,6 +4,7 @@ import SliderComponent from '@/components/widget/SliderComponent/SliderComponent
 import Image from 'next/image'
 
 import testImg from '../../public/image/test_bread.png'
+import { getSlider } from '@/utils/data.server.request';
 
 async function getSlides() {
   const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/sliders?populate=*`);
@@ -89,13 +90,14 @@ const newItems = [
 ]
 
 export default async function Home() {
-  // const sliders = await getSlides();
+  const slider = await getSlider();
+  console.log(slider);
 
   return (
     <div>
       <SliderComponent
         adminHost={process.env.HOST_ADMIN_PANEL}
-        sliders={sliders.data}
+        slider={slider.data.attributes}
       />
       <CarouselItemsComponent 
         items={newItems}

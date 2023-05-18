@@ -1,5 +1,5 @@
 'use client'
-import styles from '../../styles/components/dynamicPage/comtent.module.scss'
+import styles from '../../styles/components/dynamicPage/content.module.scss'
 
 import { usePathname } from 'next/navigation'
 
