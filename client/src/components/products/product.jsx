@@ -5,7 +5,6 @@ import { FaStar } from "react-icons/fa";
 export default function Product({ product, host }) {
     return (
         <div
-            key={product.id}
             className={styles.product}
         >
             <img

@@ -1,4 +1,4 @@
-import styles from '../../styles/pages/categories.module.scss'
+import styles from '../../styles/pages/products.module.scss'
 
 import MenuComponent from "@/components/global/menu";
 

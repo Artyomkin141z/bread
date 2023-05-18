@@ -1,5 +1,5 @@
 'use client'
-import styles from '../../styles/pages/categories.module.scss'
+import styles from '../../styles/pages/products.module.scss'
 
 import MenuComponent from '@/components/global/menu';
 
@@ -11,9 +11,9 @@ import Product from '@/components/products/product';
 
 export default function Categories() {
     const pathname = usePathname();
-    const {menuItem, getMenuItemIsLoading, getMenuItemIsError} = getMenuProductItem(pathname);  
-        
-    if(getMenuItemIsLoading){
+    const { menuItem, getMenuItemIsLoading, getMenuItemIsError } = getMenuProductItem(pathname);
+
+    if (getMenuItemIsLoading) {
         return (
             <div>
                 Загрузка
@@ -21,16 +21,15 @@ export default function Categories() {
         )
     }
 
-    console.log(menuItem);
-
     const content = menuItem[0];
 
     const renderProducts = (products) => {
-        console.log(content.related.products);
+        console.log(content);
         return (
             products.map(product => {
                 return (
                     <Product
+                        key={product.id}
                         host={host}
                         product={product}
                     />
@@ -42,12 +41,15 @@ export default function Categories() {
     return (
         <>
             <div className={styles.title}>
-                <h1>{content.title ? content.title : ''}</h1>
+                <div className={styles.h1}>
+                    <h1>{content.title ? content.title : ''}</h1>
+                    <p>{content.related.products.length ? content.related.products.length : 'Нет'} товара</p>
+                </div>
                 <div className={styles.baner}>
-                    
+
                 </div>
             </div>
-            <div className={styles.content}>
+            <div className={styles.products}>
                 {renderProducts(content.related.products)}
             </div>
         </>

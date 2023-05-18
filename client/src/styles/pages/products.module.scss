@@ -16,9 +16,22 @@
     flex-direction: column;
     gap: 20px;
 
-    h1 {
-        font-size: 3rem;
+    .h1 {
+        h1 {
+            font-size: 3rem;
+        }
+
+        p{
+            margin-bottom: 8px;
+            color: $color-3;
+        }
+
+        display: flex;
+        align-items: flex-end;
+        gap: 20px;
     }
+
+    
 
     .baner {
         width: 100%;
@@ -28,7 +41,7 @@
     }
 }
 
-.content {
+.products {
     grid-area: CONTENT;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

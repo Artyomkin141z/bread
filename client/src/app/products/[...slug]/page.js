@@ -1,5 +1,5 @@
 'use client'
-import styles from '../../../styles/pages/categories.module.scss'
+import styles from '../../../styles/pages/products.module.scss'
 
 import Link from "next/link";
 import { usePathname } from 'next/navigation'
@@ -18,9 +18,6 @@ export default function Categories() {
             </div>
         )
     }
-    getMenuProductItem
-
-    console.log(menuItem);
 
     const content = menuItem[0];
 
@@ -30,6 +27,7 @@ export default function Categories() {
             products.map(product => {
                 return (
                     <Product
+                        key={product.id}
                         host={host}
                         product={product}
                     />
@@ -41,12 +39,15 @@ export default function Categories() {
     return (
         <>
             <div className={styles.title}>
-                <h1>{content.title ? content.title : ''}</h1>
+                <div className={styles.h1}>
+                    <h1>{content.title ? content.title : ''}</h1>
+                    <p>{content.related.products.length ? content.related.products.length : 'Нет'} товара</p>
+                </div>
                 <div className={styles.baner}>
-                    
+
                 </div>
             </div>
-            <div className={styles.content}>
+            <div className={styles.products}>
                 {renderProducts(content.related.products)}
             </div>
         </>
