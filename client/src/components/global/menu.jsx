@@ -5,12 +5,11 @@ import { getMenu } from '@/utils/data.client.request';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import MenuPreloader from '../preloaders/menu';
 
 export default function MenuComponent() {
     const pathname = usePathname();
     const { menu, getMenuIsLoading, getMenuIsError } = getMenu();
-
-    // console.log(menu)
 
     const renderMenu = (items) => {
         return (
@@ -31,10 +30,10 @@ export default function MenuComponent() {
     }
 
     if (getMenuIsLoading) {
-        return (<div>
-            Загрузка
-        </div>)
+        return <MenuPreloader />
     }
+
+    console.log(menu)
 
     return (
         <nav className={styles.nav}>

@@ -1,0 +1,68 @@
+@import "../../global-constants.scss";
+
+.titlePreloaders {
+    grid-area: HEAD;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .h1 {
+        width: 300px;
+        height: 50px;
+        background-color: $color-2;
+        border-radius: 15px;
+    }
+
+    .baner {
+        width: 100%;
+        height: 200px;
+        background-color: $color-2;
+        border-radius: 15px;
+    }
+}
+
+.menuPreloader {
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .li_menuPreloader {
+            width: 100%;
+            height: 26px;
+            background-color: $color-2;
+            border-radius: 15px;
+            list-style: none;
+        }
+    }
+}
+
+.productsProductPreloader{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 30px;
+
+    .product{
+        padding: 30px 20px;
+        box-shadow: 0 2px 6px rgba(28, 28, 30, 0.0784313725);
+        border-radius: 15px;
+        display: grid;
+        grid-template-rows: 200px auto 1fr;
+        gap: 20px;
+
+        .h{
+            width: 70%;
+            height: 18px;
+            background-color: $color-2;
+            border-radius: 15px;
+        }
+
+        .com{
+            width: 30%;
+            height: 35px;
+            background-color: $color-2;
+            border-radius: 15px;
+        }
+    }
+}

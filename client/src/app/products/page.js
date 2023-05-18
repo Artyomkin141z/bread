@@ -8,6 +8,8 @@ import { usePathname } from 'next/navigation'
 
 import { host, getMenuProductItem } from '@/utils/data.client.request';
 import Product from '@/components/products/product';
+import TitleProductsPreloader from '@/components/preloaders/title';
+import ProductsPreloader from '@/components/preloaders/products';
 
 export default function Categories() {
     const pathname = usePathname();
@@ -15,16 +17,17 @@ export default function Categories() {
 
     if (getMenuItemIsLoading) {
         return (
-            <div>
-                Загрузка
-            </div>
+            <>
+                <TitleProductsPreloader />
+                <ProductsPreloader />
+            </>
         )
     }
 
     const content = menuItem[0];
 
     const renderProducts = (products) => {
-        console.log(content);
+        // console.log(content);
         return (
             products.map(product => {
                 return (
