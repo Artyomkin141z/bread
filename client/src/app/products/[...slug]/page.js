@@ -33,7 +33,8 @@ export default function Categories() {
                     <Product
                         key={product.id}
                         host={host}
-                        product={product}
+                        title={product.title}
+                        image={product.image}
                     />
                 )
             })

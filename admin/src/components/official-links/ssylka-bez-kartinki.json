@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_official_links_ssylka_bez_kartinki",
+  "info": {
+    "displayName": "Ссылка без картинки"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

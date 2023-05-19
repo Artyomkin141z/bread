@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_official_links_ssylka_s_kartinkoj",
+  "info": {
+    "displayName": "Ссылка с картинкой"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

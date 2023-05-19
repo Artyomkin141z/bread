@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "official_links",
+  "info": {
+    "singularName": "official-link",
+    "pluralName": "official-links",
+    "displayName": "Официальные ссылки",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "links": {
+      "displayName": "Ссылка без картинки",
+      "type": "component",
+      "repeatable": true,
+      "component": "official-links.ssylka-bez-kartinki"
+    },
+    "imageLinks": {
+      "displayName": "Ссылка с картинкой",
+      "type": "component",
+      "repeatable": true,
+      "component": "official-links.ssylka-s-kartinkoj"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "official-links.ssylka-s-kartinkoj"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

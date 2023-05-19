@@ -6,10 +6,15 @@ import telegram from '../../../public/image/global/telegram.svg'
 import instagram from '../../../public/image/global/instagram.svg'
 
 import Link from 'next/link'
-import { getMenu } from '@/utils/data.server.request'
+import { getCop, getMenu, getOfficialLinks } from '@/utils/data.server.request'
+import HTMLReactParser from 'html-react-parser'
 
-export default async function Footer(data) {
+export default async function Footer() {
     const menu = await getMenu();
+    const officialLinks = await getOfficialLinks();
+    const cop = await getCop();
+
+    console.log(cop)
 
     const renderMenu = (items) => {
         let products;
@@ -45,45 +50,87 @@ export default async function Footer(data) {
 
     }
 
+    const renderLinks = (links) => {
+        return (
+            <ul>
+                <h3>{links.title}</h3>
+                {
+                    links.links.map(link => {
+                        return <li key={link.id}>
+                            <Link href={link.url}>{link.title}</Link>
+                        </li>
+                    })
+                }
+            </ul>
+        )
+    }
+
+    const renderSocialLinks = (links) => {
+        return (
+            <div className={styles.images}>
+                {links.map(link => {
+                    return (
+                        <Link href={link.url} key={link.id}>
+                            <Image
+                                src={`${process.env.HOST_ADMIN_PANEL}${link.image.data.attributes.url}`}
+                                alt={link.title}
+                                width={link.image.data.attributes.width}
+                                height={link.image.data.attributes.height}
+                            />
+                        </Link>
+                    )
+                })}
+            </div>
+        )
+    }
+
+    const renderImageLinks = (links) => {
+        return (
+            <div className={styles.imgLinks}>
+                {links.map(link => {
+                    if (link.url !== null) {
+                        return <Link href={link.url} key={link.id}>
+                            <Image
+                                src={`${process.env.HOST_ADMIN_PANEL}${link.image.data.attributes.url}`}
+                                alt={link.title}
+                                width={link.image.data.attributes.width}
+                                height={link.image.data.attributes.height}
+                            />
+                        </Link>
+                    }
+                    else {
+                        return <Image
+                            key={link.id}
+                            src={`${process.env.HOST_ADMIN_PANEL}${link.image.data.attributes.url}`}
+                            alt={link.title}
+                            width={link.image.data.attributes.width}
+                            height={link.image.data.attributes.height}
+                        />
+                    }
+                })}
+            </div>
+        )
+    }
+
     return (
         <div className={styles.footer}>
             <footer>
                 <nav>
                     {renderMenu(menu)}
-                    <ul>
-                        <h3>Официальные ссылки</h3>
-                        <li><Link href='#'>Президент Республики Беларусь</Link></li>
-                        <li><Link href='#'>Министерство сельского хозяйства и продовольствия</Link></li>
-                        <li><Link href='#'>Сайт города Новополоцка</Link></li>
-                        <li><Link href='#'>ОАО «Витебскхлебпром»</Link></li>
-                    </ul>
+                    {renderLinks(officialLinks.data.attributes)}
                     <div className={styles.feedback}>
                         <div className={styles.social}>
                             <h3>Мы в соц сетях</h3>
                             <div className={styles.images}>
-                                <Image src={vk} alt='' />
-                                <Image src={telegram} alt='' />
-                                <Image src={instagram} alt='' />
+                                {renderSocialLinks(officialLinks.data.attributes.socials)}
                             </div>
                         </div>
                         <div className={styles.button}>Свзяться с нами</div>
                     </div>
                 </nav>
-                <div className={styles.imgLinks}>
-                    <img src='http://www.novhleb.by/images/molodezhnoj.jpg' alt='Новополоцк молодежная столица' />
-                    <img src='http://www.novhleb.by/images/bird.jpg' alt='Год мира и созедания' />
-                </div>
+                {renderImageLinks(officialLinks.data.attributes.imageLinks)}
                 <div className={styles.cop}>
-                    <p>
-                        © 2023 Закрытое акционерное общество «Интернет-магазин Евроопт». Все права защищены. Зарегистрировано решением Минского районного исполнительного комитета от 09.06.2014 г.
-                        в Едином государственном регистре юридических лиц и индивидуальных предпринимателей. Свидетельство о государственной регистрации №691536217. УНП 691536217,
-                        место нахождения: 220019 Минская область, Минский район, Щомыслицкий с/с, Западный промузел ТЭЦ-4, кабинет 229. Почтовый адрес ЗАО «Интернет-магазин Евроопт»:
-                        220019, г. Минск, а/я 19. Онлайн-гипермаркет edostavka.by. Режим работы: круглосуточно. Дата регистрации в Торговом реестре: 24.10.2014 г.
-                        Адрес электронной почты: info@e-dostavka.by
-                    </p>
-                    <p>Способы оплаты товара и доставки: 1) наличными денежными средствами экспедитору; 2) банковской пластиковой карточкой экспедитору; 3)
-                        банковской пластиковой карточкой в режиме «онлайн»; 4) безналичный расчет по счету. Способы доставки товара: 1) транспортным средством продавца; 2)
-                        из пункта выдачи заказов.</p>
+                    {HTMLReactParser(cop.data.attributes.cop)}
                 </div>
             </footer>
         </div>

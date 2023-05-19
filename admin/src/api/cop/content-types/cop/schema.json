@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "cops",
+  "info": {
+    "singularName": "cop",
+    "pluralName": "cops",
+    "displayName": "Копирайтинг"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cop": {
+      "type": "richtext"
+    }
+  }
+}

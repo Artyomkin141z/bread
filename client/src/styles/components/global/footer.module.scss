@@ -71,9 +71,10 @@ $gap-inside: 15px;
 
         .imgLinks {
             display: flex;
-            gap: 10px;
+            gap: 20px;
 
             img {
+                width: auto;
                 height: 70px;
             }
         }

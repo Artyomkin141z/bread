@@ -8,9 +8,12 @@ import Link from 'next/link';
 import { useRef, useCallback } from 'react';
 
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import Product from '@/components/products/product';
+import { host } from '@/utils/data.client.request';
 
-export default function CarouselItemsComponent({ items, title, linkText }) {
+export default function CarouselItemsComponent({ products, title, linkText, link }) {
     const swiperRef = useRef(null);
+    // console.log(products)
 
     const handlePrevClick = useCallback(() => {
         if (swiperRef.current) {
@@ -24,17 +27,13 @@ export default function CarouselItemsComponent({ items, title, linkText }) {
         }
     }, [])
 
-    const swiperSlides = items.map((item, i) => {
+    const swiperSlides = products.map((item, i) => {
         return <SwiperSlide key={i} className={styles.slide}>
-            <Link href={item.id}>
-                <img
-                    src={item.img}
-                    alt={item.title}
-                />
-            </Link>
-            <Link href={item.id} className={styles.title}>
-                {item.title}
-            </Link>
+            <Product 
+                title={item.attributes.title}
+                image={item.attributes.image.data.attributes}
+                host={host}
+            />
         </SwiperSlide>
     })
 
@@ -43,7 +42,7 @@ export default function CarouselItemsComponent({ items, title, linkText }) {
             <header>
                 <div className={styles.title}>
                     <h3>{title}</h3>
-                    <Link href={'#'}>{linkText}</Link>
+                    <Link href={link}>{linkText}</Link>
                 </div>
                 <div className={styles.buttonContainer}>
                     <div

@@ -3,18 +3,7 @@ import MapComponent from '@/components/widget/MapComponent/MapComponent';
 import SliderComponent from '@/components/widget/SliderComponent/SliderComponent'
 import Image from 'next/image'
 
-import testImg from '../../public/image/test_bread.png'
-import { getSlider } from '@/utils/data.server.request';
-
-async function getSlides() {
-  const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/sliders?populate=*`);
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
-
-  return res.json();
-}
+import { get15Products, getSlider } from '@/utils/data.server.request';
 
 const sliders = {
   data: [
@@ -91,7 +80,8 @@ const newItems = [
 
 export default async function Home() {
   const slider = await getSlider();
-  console.log(slider);
+  const products = await get15Products();
+  // console.log(products.data);
 
   return (
     <div>
@@ -100,15 +90,16 @@ export default async function Home() {
         slider={slider.data.attributes}
       />
       <CarouselItemsComponent 
-        items={newItems}
-        title='Новинки'
-        linkText='Все новинки'
+        products={products.data}
+        title='Наша продукция'
+        linkText='Все товары'
+        link='/products'
       />
-      <CarouselItemsComponent 
+      {/* <CarouselItemsComponent 
         items={newItems}
         title='Новости'
         linkText='Все новости'
-      />
+      /> */}
       {/* <MapComponent /> */}
     </div>
   )

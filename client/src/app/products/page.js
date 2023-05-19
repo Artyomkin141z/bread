@@ -30,11 +30,13 @@ export default function Categories() {
         // console.log(content);
         return (
             products.map(product => {
+                console.log(product)
                 return (
                     <Product
                         key={product.id}
                         host={host}
-                        product={product}
+                        title={product.title}
+                        image={product.image}
                     />
                 )
             })
