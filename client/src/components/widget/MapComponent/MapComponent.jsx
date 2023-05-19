@@ -13,7 +13,7 @@ export default function MapComponent() {
             <YMaps>
                 <Map
                     defaultState={{
-                        center: [55.513573, 28.671460],
+                        center: [55.514918, 28.685912],
                         zoom: 15,
                         controls: ["zoomControl", "fullscreenControl"],
                     }}
