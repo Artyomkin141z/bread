@@ -1,0 +1,28 @@
+.container ul{
+    margin-top: 20px;
+}
+.container ul li{
+    
+    list-style: none;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 50px 50px;
+    grid-template-areas:
+        "A A B C D E"
+        "F F F F F F";
+}
+.container ul li div:nth-child(1){
+    grid-area: A;
+}
+.container ul li div:nth-child(2){
+    grid-area: B;
+}
+.container ul li div:nth-child(3){
+    grid-area: C;
+}
+.container ul li button:nth-child(4){
+    grid-area: D;
+}
+.container ul li button:nth-child(5){
+    grid-area: E;
+}

@@ -1,0 +1,12 @@
+.container{
+    background-color: var(--color-cbg);
+    margin: 90px 50px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #c3c3c3;
+}
+.container form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

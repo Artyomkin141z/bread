@@ -1,0 +1,55 @@
+.button{
+    width: 50px;
+    height: 50px;
+}
+
+.container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddddddb5;
+}
+
+.center_container{    
+    position: relative;
+    background-color: var(--color-cbg);
+    width: 60%;
+    padding: 100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px;
+}
+
+.url{
+    display: flex;
+    gap: 20px;
+}
+.url button{
+    border-radius: 12px;
+    padding: 5px 10px;
+}
+
+.upload_container{
+    height: 70px;
+    background-color: var(--color-bg);
+    border-radius: 12px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

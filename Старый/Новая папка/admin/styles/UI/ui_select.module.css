@@ -1,0 +1,16 @@
+.container{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 20px;
+    box-shadow: 0 0 5px var(--color-2);
+    border-radius: 12px;
+}
+.container select{
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-cbg);
+    border: none;
+}

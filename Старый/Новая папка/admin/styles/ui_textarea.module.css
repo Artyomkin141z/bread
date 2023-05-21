@@ -1,0 +1,8 @@
+.textarea__container textarea{
+    resize: none; /* отключает возможность изменять размер textarea */
+    overflow: hidden; /* скрывает лишний текст, который выходит за пределы textarea */
+    min-height: 50px; /* минимальная высота textarea */
+}
+.textarea__container textarea:focus{
+    outline: none; /* убирает фокусную рамку при клике на textarea */
+}

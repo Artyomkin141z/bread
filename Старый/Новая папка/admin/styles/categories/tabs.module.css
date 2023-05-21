@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+}
+
+.tab, .container button{
+    padding: 5px 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.active{
+    background-color: var(--color-green);
+    box-shadow: 0 0 10px var(--color-green);
+}
+
+.tab:hover{
+    box-shadow: 0 0 10px var(--color-green);
+}
