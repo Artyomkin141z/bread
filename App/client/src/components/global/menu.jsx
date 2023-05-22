@@ -4,7 +4,6 @@ import styles from '../../styles/components/dynamicPage/menu.module.scss'
 import { getMenu } from '@/utils/data.client.request';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
 import MenuPreloader from '../preloaders/menu';
 
 export default function MenuComponent() {
