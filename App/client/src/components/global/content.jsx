@@ -22,7 +22,7 @@ export default function ContentComponent() {
     // console.log(content);
     content.content = content.content.replace(/<p>{/g, '<').replace(/}<\/p>/g, '>')
     // content.content = content.content.replace(/{/g, '<').replace(/}/g, '>')
-    console.log(content);
+    // console.log(content);
 
     return (
         <>

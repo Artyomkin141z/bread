@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import styles from '../../styles/components/products/product.module.scss'
 
 import { FaStar } from "react-icons/fa";
 
-export default function Product({ title, image, host }) {
+export default function Product({ id, title, image, host }) {
     return (
         <div
             className={styles.product}
@@ -13,7 +14,7 @@ export default function Product({ title, image, host }) {
                 height={image.height}
                 alt={title}
             />
-            <h3>{title}</h3>
+            <Link href={`/product/${id}`}><h3>{title}</h3></Link>
             <div className={styles.comments}>
                 <FaStar />
                 <p>4.7 (3)</p>

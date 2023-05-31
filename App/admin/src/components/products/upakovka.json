@@ -1,7 +1,8 @@
 {
   "collectionName": "components_products_upakovka",
   "info": {
-    "displayName": "Упаковка"
+    "displayName": "Упаковка",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,6 +14,10 @@
       "type": "integer",
       "min": 0,
       "max": 10000
+    },
+    "price": {
+      "type": "decimal",
+      "min": 0
     }
   }
 }

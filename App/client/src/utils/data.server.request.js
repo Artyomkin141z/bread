@@ -28,7 +28,7 @@ export async function getSlider() {
     return res.json();
 }
 
-export async function get15Products(){
+export async function get15Products() {
     const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/products?populate[0]=image&populate[1]=categories&pagination[limit]=15`);
 
     if (!res.ok) {
@@ -38,7 +38,7 @@ export async function get15Products(){
     return res.json();
 }
 
-export async function getOfficialLinks(){
+export async function getOfficialLinks() {
     const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/official-link?populate[links][populate][0]=*&populate[imageLinks][populate][1]=image&populate[socials][populate][2]=image`);
 
     if (!res.ok) {
@@ -48,8 +48,18 @@ export async function getOfficialLinks(){
     return res.json();
 }
 
-export async function getCop(){
+export async function getCop() {
     const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/cop`);
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch data');
+    }
+
+    return res.json();
+}
+
+export async function getProduct(id) {
+    const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/products/${id}?populate=*`);
 
     if (!res.ok) {
         throw new Error('Failed to fetch data');

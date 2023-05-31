@@ -30,6 +30,7 @@ export default function CarouselItemsComponent({ products, title, linkText, link
     const swiperSlides = products.map((item, i) => {
         return <SwiperSlide key={i} className={styles.slide}>
             <Product 
+                id={item.id}
                 title={item.attributes.title}
                 image={item.attributes.image.data.attributes}
                 host={host}

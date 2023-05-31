@@ -11,7 +11,7 @@ import Product from '@/components/products/product';
 import TitleProductsPreloader from '@/components/preloaders/title';
 import ProductsPreloader from '@/components/preloaders/products';
 
-export default function Categories() {
+export default function CategoriesPage() {
     const pathname = usePathname();
     const { menuItem, getMenuItemIsLoading, getMenuItemIsError } = getMenuProductItem(pathname);
 
@@ -30,11 +30,12 @@ export default function Categories() {
         // console.log(content);
         return (
             products.map(product => {
-                console.log(product)
+                // console.log(product)
                 return (
                     <Product
                         key={product.id}
                         host={host}
+                        id={product.id}
                         title={product.title}
                         image={product.image}
                     />

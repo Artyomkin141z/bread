@@ -14,7 +14,7 @@ export default async function Footer() {
     const officialLinks = await getOfficialLinks();
     const cop = await getCop();
 
-    console.log(cop)
+    // console.log(cop)
 
     const renderMenu = (items) => {
         let products;

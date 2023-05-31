@@ -32,7 +32,7 @@ export default function MenuComponent() {
         return <MenuPreloader />
     }
 
-    console.log(menu)
+    // console.log(menu)
 
     return (
         <nav className={styles.nav}>
