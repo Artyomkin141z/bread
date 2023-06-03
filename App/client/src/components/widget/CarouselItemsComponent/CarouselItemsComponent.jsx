@@ -13,7 +13,7 @@ import { host } from '@/utils/data.client.request';
 
 export default function CarouselItemsComponent({ products, title, linkText, link }) {
     const swiperRef = useRef(null);
-    // console.log(products)
+    console.log(products)
 
     const handlePrevClick = useCallback(() => {
         if (swiperRef.current) {
@@ -33,6 +33,7 @@ export default function CarouselItemsComponent({ products, title, linkText, link
                 id={item.id}
                 title={item.attributes.title}
                 image={item.attributes.image.data.attributes}
+                packages={item.attributes.package}
                 host={host}
             />
         </SwiperSlide>

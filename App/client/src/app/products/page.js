@@ -38,6 +38,7 @@ export default function CategoriesPage() {
                         id={product.id}
                         title={product.title}
                         image={product.image}
+                        packages={product.package}
                     />
                 )
             })

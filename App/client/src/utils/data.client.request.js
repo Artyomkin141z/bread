@@ -26,7 +26,7 @@ export function getMenuItem(url) {
 }
 
 export function getMenuProductItem(url){
-    const { data, error, isLoading } = useSWR(`${host}/api/navigation/render/1?path=${url}&populate[0]=products&populate[1]=products.image`, fetcher);
+    const { data, error, isLoading } = useSWR(`${host}/api/navigation/render/1?path=${url}&populate[0]=products&populate[1]=products.image&populate[2]=products.package`, fetcher);
     // console.log(data)
 
     return {

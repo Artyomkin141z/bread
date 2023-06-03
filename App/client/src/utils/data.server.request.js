@@ -29,7 +29,7 @@ export async function getSlider() {
 }
 
 export async function get15Products() {
-    const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/products?populate[0]=image&populate[1]=categories&pagination[limit]=15`);
+    const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/products?populate[0]=image&populate[1]=categories&populate[2]=package&pagination[limit]=15`);
 
     if (!res.ok) {
         throw new Error('Failed to fetch data');
