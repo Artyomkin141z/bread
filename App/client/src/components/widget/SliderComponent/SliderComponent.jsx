@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 
 export default function SliderComponent({ slider, adminHost }) {
-    console.log(slider);
+    // console.log(slider);
 
     const swiperSlides = slider.slides.map((slide, i) => {
         return <SwiperSlide key={slide.id}>

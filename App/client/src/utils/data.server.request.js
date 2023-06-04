@@ -67,3 +67,33 @@ export async function getProduct(id) {
 
     return res.json();
 }
+
+export async function getWidgetNews(){
+    const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/news?pagination[limit]=6&sort=date:desc&populate=*`);
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch data');
+    }
+
+    return res.json();
+}
+
+export async function getNews(){
+    const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/news?populate=*&sort=date:desc`);
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch data');
+    }
+
+    return res.json();
+}
+
+export async function getOneNews(id){
+    const res = await fetch(`${process.env.HOST_ADMIN_PANEL}/api/news/${id}?populate=*`);
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch data');
+    }
+
+    return res.json();
+}

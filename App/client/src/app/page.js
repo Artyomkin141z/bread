@@ -4,6 +4,9 @@ import SliderComponent from '@/components/widget/SliderComponent/SliderComponent
 import Image from 'next/image'
 
 import { get15Products, getSlider } from '@/utils/data.server.request';
+import NewsWidget from '@/components/widget/News/NewsWidget';
+
+
 
 export default async function Home() {
   const slider = await getSlider();
@@ -16,17 +19,13 @@ export default async function Home() {
         adminHost={process.env.HOST_ADMIN_PANEL}
         slider={slider.data.attributes}
       />
-      <CarouselItemsComponent 
+      <CarouselItemsComponent
         products={products.data}
         title='Наша продукция'
         linkText='Все товары'
         link='/products'
       />
-      {/* <CarouselItemsComponent 
-        items={newItems}
-        title='Новости'
-        linkText='Все новости'
-      /> */}
+      <NewsWidget />
       <MapComponent />
     </div>
   )

@@ -13,7 +13,7 @@ import { host } from '@/utils/data.client.request';
 
 export default function CarouselItemsComponent({ products, title, linkText, link }) {
     const swiperRef = useRef(null);
-    console.log(products)
+    // console.log(products)
 
     const handlePrevClick = useCallback(() => {
         if (swiperRef.current) {

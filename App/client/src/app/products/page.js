@@ -11,6 +11,19 @@ import Product from '@/components/products/product';
 import TitleProductsPreloader from '@/components/preloaders/title';
 import ProductsPreloader from '@/components/preloaders/products';
 
+export const metadata = {
+    title: 'Продукция',
+};
+
+// export async function generateMetadata({ params, searchParams }, parent) {
+//     const pathname = usePathname();
+//     const { menuItem, getMenuItemIsLoading, getMenuItemIsError } = getMenuProductItem(pathname);
+
+//     return {
+//         title: menuItem[0].title,
+//     };
+// }
+
 export default function CategoriesPage() {
     const pathname = usePathname();
     const { menuItem, getMenuItemIsLoading, getMenuItemIsError } = getMenuProductItem(pathname);

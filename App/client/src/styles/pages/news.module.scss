@@ -1,0 +1,15 @@
+.header{
+    margin-bottom: 60px;
+
+    h1{
+        font-size: 3rem;
+    }
+}
+
+.gridNews {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    align-items: start;
+}

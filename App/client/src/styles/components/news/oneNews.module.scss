@@ -1,0 +1,32 @@
+@import '../../global-constants.scss';
+
+.oneNews {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-decoration: none;
+
+    &:hover {
+        box-shadow: 0 2px 18px #6c686883;
+        transform: scale(1.02);
+        transition: 200ms;
+    }
+
+    img {
+    }
+
+    h3 {
+        background-color: $color-2;
+        padding: 20px 10px;
+
+        div {
+            max-height: 3rem;
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+}

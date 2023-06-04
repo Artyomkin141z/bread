@@ -4,6 +4,16 @@ import CarouselItemsComponent from "@/components/widget/CarouselItemsComponent/C
 import SliderComponent from '@/components/widget/SliderComponent/SliderComponent';
 
 import { get15Products, getProduct } from "@/utils/data.server.request";
+import Link from 'next/link';
+
+export async function generateMetadata({ params, searchParams }, parent) {
+    const id = params.id;
+    const product = await getProduct(params.id);
+
+    return {
+        title: product.data.attributes.title,
+    };
+}
 
 export default async function ProductPage({ params }) {
     const products = await get15Products();
@@ -32,10 +42,21 @@ export default async function ProductPage({ params }) {
         })
     }
 
+    const renderCategories = () => {
+        return product.categories.data.map(category => {
+            return (
+                <p key={category.id}>{category.attributes.title}</p>
+            )
+        })
+    }
+
     return (
         <div>
             <header className={styles.head}>
                 <h1>{product.title}</h1>
+                <div className={styles.categories}>
+                    {renderCategories()}
+                </div>
             </header>
             <div className={styles.product}>
                 <img
