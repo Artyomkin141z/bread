@@ -10,7 +10,6 @@
     padding: 0;
     box-sizing: border-box;
     color: $color;
-    
 }
 
 html {
@@ -39,9 +38,8 @@ body {
         border-radius: 5px;
     }
 
-    & {
-        // scrollbar-width: thin;
-        // scrollbar-color: #888 #f1f1f1;
+    &:has(#madal) {
+        overflow: hidden;
     }
 }
 

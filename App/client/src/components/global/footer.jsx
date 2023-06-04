@@ -8,6 +8,7 @@ import instagram from '../../../public/image/global/instagram.svg'
 import Link from 'next/link'
 import { getCop, getMenu, getOfficialLinks } from '@/utils/data.server.request'
 import HTMLReactParser from 'html-react-parser'
+import Feedback from './feedvack'
 
 export default async function Footer() {
     const menu = await getMenu();
@@ -125,7 +126,8 @@ export default async function Footer() {
                                 {renderSocialLinks(officialLinks.data.attributes.socials)}
                             </div>
                         </div>
-                        <div className={styles.button}>Свзяться с нами</div>
+                        <Feedback />
+                        {/* <div className={styles.button}>Свзяться с нами</div> */}
                     </div>
                 </nav>
                 {renderImageLinks(officialLinks.data.attributes.imageLinks)}

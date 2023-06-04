@@ -1,0 +1,94 @@
+@import "../../global-constants.scss";
+
+.button {
+    background-color: $color-2;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.madal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f4f4f4a8;
+    z-index: 999;
+    overflow-y: hidden;
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 600px;
+        // height: 90%;
+        max-height: 800px;
+        background-color: $color-bg;
+        padding: 40px 30px;
+        border-radius: 15px;
+        overflow-y: auto;
+
+        header {
+            margin-bottom: 30px;
+            h2 {
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            p {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .flex {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+            }
+
+            input {
+                padding: 10px 15px;
+                border-radius: 10px;
+                width: 100%;
+            }
+
+            textarea{
+                width: 100%;
+                min-height: 80px;
+                border-radius: 10px;
+                resize: vertical;
+                padding: 10px 15px;
+            }
+
+            button{
+                padding: 10px 15px;
+                border-radius: 10px;
+                width: 100%;
+                border: none;
+                background-color: $color-2;
+            }
+
+            label {
+                position: relative;
+
+                div {
+                    position: absolute;
+                    top: 0;
+                    left: 15px;
+                    transform: translateY(-50%);
+                    background-color: $color-bg;
+                    padding: 1px 10px;
+                }
+            }
+        }
+    }
+}
