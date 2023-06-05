@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "baners",
+  "info": {
+    "singularName": "baner",
+    "pluralName": "baners",
+    "displayName": "Банеры"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "position": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
